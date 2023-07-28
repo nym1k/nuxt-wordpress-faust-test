@@ -14,12 +14,11 @@
       <div class="text-2xl mt-4">
         {{ new Date(data.date).toLocaleDateString() }}
       </div>
-      <article
-        class="mt-4 space-y-2"
-        v-html="data.content"
-      />
-      <h3>Block Content</h3>
-      <BlockRenderer v-bind="{ blocks: data.editorBlocks }" />
+      <div class="mt-4 space-y-2">
+        <BlockRenderer
+          v-bind="{ blocks: data.editorBlocks }"
+        />
+      </div>
     </main>
   </div>
 </template>
@@ -57,6 +56,7 @@ const { data, pending, refresh, error } = await useFetch(config.public.wordpress
                 }
               }
             }
+            featuredImageId
           }
         }
       }

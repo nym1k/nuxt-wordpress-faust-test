@@ -12,12 +12,18 @@ const { data, refresh, pending } = await useFetch(config.public.wordpressUrl, {
             date
             excerpt
             uri
+            featuredImage {
+              node {
+                id
+                sourceUrl
+              }
+            }
           }
         }
       }`
     },
     transform(data) {
-      return data.data.posts.nodes as Array<Record<'title' | 'date' | 'excerpt' | 'uri', string>>
+      return data.data.posts.nodes as Array<Record<'title' | 'date' | 'excerpt' | 'uri' | 'featuredImageId', string>>
     }
 })
 </script>

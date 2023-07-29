@@ -1,5 +1,18 @@
 <template>
-  <Block v-for="block in blocks" :key="block.clientId" :block="block"></Block>
+  <div>
+    <template
+      v-for="(block, blockIndex) in blocks"
+      :key="blockIndex"
+    >
+      <Block
+        v-bind="{
+          blockData: JSON.parse(block['attributesJSON']),
+          content: block['originalContent'],
+          name: block['name']
+        }"
+      />
+    </template>
+  </div>
 </template>
     
 <script setup>

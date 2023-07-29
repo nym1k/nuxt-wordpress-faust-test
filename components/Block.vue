@@ -1,10 +1,13 @@
 <template>
-  <CoreParagraph v-if="block.name === 'core/paragraph'" :block="block"></CoreParagraph>
-  <CoreImage v-if="block.name === 'core/image'" :block="block"></CoreImage>
+  <CoreParagraph v-if="name === 'core/paragraph'" :content="content" />
+  <!-- <CoreImage v-if="name === 'core/image'" :block="block"></CoreImage> -->
+  <HomeHero v-if="name === 'acf/home-hero'" v-bind="{ blockData }" />
 </template>
     
 <script setup>
 const props = defineProps({
-  block: Object
+  blockData: Object,
+  content: String,
+  name: String
 })
 </script>

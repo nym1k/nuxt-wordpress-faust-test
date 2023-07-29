@@ -1,5 +1,5 @@
 <template>
-  <p v-html="block.attributes.content"></p>
+  <p v-html="content" />
 </template>
    
 <style >
@@ -11,6 +11,6 @@ a {
    
 <script setup>
 const props = defineProps({
-  block: Object
+  content: String
 })
 </script>

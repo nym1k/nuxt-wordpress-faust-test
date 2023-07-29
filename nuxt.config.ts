@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      wordpressUrl: 'https://acfheadlessprd.wpengine.com/graphql'
+      wordpressUrl: 'http://faust.local/graphql'
     }
   },
   routeRules: {
